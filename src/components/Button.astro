@@ -1,19 +1,16 @@
 ---
-
-const {title, variant} = Astro.props;
+const { title, variant } = Astro.props;
 ---
 
 <button class={variant}>{title} </button>
 
 <style>
-    button {
-        padding: 10px 20px;
-        background-color: #ff5900;
-        border: none;
-        margin: 1rem;
-        border-radius: 10px;
-         color: white;  
-    }
-
-    
+  button {
+    padding: 10px 20px;
+    background-color: #ff5900;
+    border: none;
+    margin: 1rem;
+    border-radius: 10px;
+    color: white;
+  }
 </style>

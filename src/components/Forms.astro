@@ -1,0 +1,157 @@
+---
+import Button from "../components/Button.astro";
+---
+
+    <meta charset="UTF-8" />
+    
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        align-items: start;
+      }
+
+      .form-wrapper {
+       
+        padding: 2rem;
+        border-radius: 10px;
+        
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .row {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .row label {
+        flex: 1;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.5rem;
+       
+        
+      }
+
+       select, textarea, {
+        padding: 0.5rem;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+      }
+
+      input,select {
+        padding: 0.5rem;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        box-shadow: 2px 2px 5px gray;
+        border: 1px lightslategray;
+        border-radius: 0.2rem;
+      }
+
+      .text-wrapper {
+        
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+       
+        border-radius: 10px;
+        
+        line-height: 1.5;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: 1fr; 
+        }
+
+        .text-wrapper, .form-wrapper {
+          padding: 1rem;
+        }
+      }
+    </style>
+ 
+  <body>
+    <div class="container">
+      <!-- Form side -->
+      <div class="form-wrapper">
+        <form action="/submit" method="POST">
+          <label>
+            Hvilket infomøde vil du deltage i? 
+            <select name="infomøde" required>
+              <option value="">Vælg...</option>
+              <option value="infomøde 1">Infomøde 1</option>
+              <option value="infomøde 2">Infomøde 2</option>
+              <option value="infomøde 3">Infomøde 3</option>
+            </select>
+          </label>
+
+          <div class="row">
+            <label>
+              Fornavn 
+              <input type="text" name="fornavn" required />
+            </label>
+            <label>
+              Efternavn 
+              <input type="text" name="efternavn" required />
+            </label>
+          </div>
+<div class="row">
+          <label>
+            Telefon nummer 
+            <input type="tel" name="telefon" required />
+          </label>
+
+          <label>
+            Email 
+            <input type="email" name="email" required />
+          </label>
+</div>
+          <label>
+            Hvor har du hørt om os henne? 
+            <input type="text" name="referral" required />
+          </label>
+
+         
+
+          
+        </form>
+      </div>
+
+      <!-- Text/content side -->
+      <div class="text-wrapper">
+        <h3>Acceptér betingelser</h3>
+        <p>
+          For at kunne tilmelde dig er vi nødt til at gemme og behandle dine personlige oplysninger. Hvis du samtykker til, at vi må gemme dine personlige oplysninger til dette formål, skal du sætte kryds i afkrydsningsfeltet nedenfor.
+        </p>
+        <div>
+            <div class="row">
+                
+            <label>
+        <input type="checkbox" name="acceptTerms" required />
+      </label> 
+      <p>
+        Jeg har læst jeres privatlivspolitik og generelle bestemmelser og er indforstået med begge.</p>
+      </div>
+      <div class="row">
+       <label>
+        <input type="checkbox" name="acceptTerms" required />
+      </label> 
+       <p>
+        Ved tilmelding giver du os tilladelse til at kontakte dig m. påmindelser og opfølgning.</p>
+      </div>
+        </div>
+         <Button title="Send"/>
+      </div>
+    </div>
+  </body>

@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import InfomoederButton from "./InfomoederButton.astro";
+import RejsekalenderButton from "./RejsekalenderButton.astro";
+import heroImg from "../images/img_7.jpg";
+import Button from "./Button.astro";
+---
+
+<section class="forside-hero-section">
+  <div class="forside-hero-bg">
+    <Image
+      src={heroImg}
+      alt="Hero background"
+      width={1920}
+      height={700}
+      class="forside-hero-bg-img"
+    />
+  </div>
+  <div class="forside-hero-content">
+    <h1 class="forside-hero-title">Dit højskoleeventyr<br />starter her</h1>
+    <p class="forside-hero-subtitle">
+      HØJSKOLENDK er en dansk højskole for unge i alderen <b>18–26 år</b>.<br
+      />Vi brænder for oplevelser, fællesskabet og det gode eventyr.
+    </p>
+    <div>
+      <Button title="Rejsekalender" />
+      <Button title="Infomøder" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .forside-hero-section {
+    position: relative;
+    width: 100vw;
+    height: 700px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .forside-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .forside-hero-bg-img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(0.7);
+  }
+  .forside-hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 2;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .forside-hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+  }
+  .forside-hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  .forside-hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+</style>

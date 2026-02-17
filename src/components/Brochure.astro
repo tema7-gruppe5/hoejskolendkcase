@@ -8,7 +8,6 @@ import laesBillede from "../images/laes_brochure.svg";
 <body>
   <div class="Image">
     <Image src={bestilBillede} alt="A description of my image" width={800} />
-
     <Image
       src={laesBillede}
       alt="Another description of my image"
@@ -18,6 +17,7 @@ import laesBillede from "../images/laes_brochure.svg";
 </body>
 <style>
   .Image {
-    display: flex;
+    display: grid;
+    grid-template-rows: 1 fr 1fr;
   }
 </style>

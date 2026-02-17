@@ -20,11 +20,24 @@ import laesBillede from "../images/laes.svg";
 <style>
   .Image {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* i stedet for 1fr 1fr */
-    justify-content: center; /* samler dem i midten */
+    grid-template-columns: max-content max-content;
+    column-gap: 300px;
+    justify-content: center;
     align-items: center;
+    padding: 50px 0;
+    background-color: rgb(247, 240, 230);
   }
+
   .Image > div {
     width: fit-content;
+  }
+
+  @media (max-width: 768px) {
+    .Image {
+      grid-template-columns: 1fr;
+      justify-items: center; /* <-- DENNE centrerer boksene på mobil */
+      column-gap: 0; /* <-- vigtig, ellers kan det lave mærkelige ting */
+      row-gap: 24px; /* afstand mellem dem lodret */
+    }
   }
 </style>

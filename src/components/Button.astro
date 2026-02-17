@@ -1,16 +1,42 @@
 ---
-const { title, variant } = Astro.props;
+const { title, variant, href, type = "button" } = Astro.props;
+const className = variant ? `btn btn--${variant}` : "btn";
 ---
 
-<button class={variant}>{title} </button>
+{
+  href ? (
+    <a class={className} href={href}>
+      {title}
+    </a>
+  ) : (
+    <button class={className} type={type}>
+      {title}
+    </button>
+  )
+}
 
 <style>
-  button {
-    padding: 10px 20px;
+  .btn {
     background-color: #ff5900;
     border: none;
     margin: 1rem;
     border-radius: 10px;
     color: white;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+
+    /* vigtigt for <a> */
+    text-decoration: none;
+  }
+
+  /* gør link-visited ikke bliver lilla */
+  .btn:visited {
+    color: white;
+  }
+
+  /* hover føles som en knap */
+  .btn:hover {
+    filter: brightness(0.95);
   }
 </style>

@@ -1,18 +1,18 @@
 ---
 import { Image } from "astro:assets";
-import bestilBillede from "../images/bestil_brochure.svg";
-import laesBillede from "../images/laes_brochure.svg";
+import bestilBillede from "../images/bestil.svg";
+import laesBillede from "../images/laes.svg";
 ---
 
 <section class="Image">
   <div>
-    <Image src={bestilBillede} alt="A description of my image" width={800} />
+    <Image src={bestilBillede} alt="A description of my image" width={300} />
   </div>
   <div>
     <Image
       src={laesBillede}
       alt="Another description of my image"
-      width={800}
+      width={300}
     />
   </div>
 </section>
@@ -21,7 +21,6 @@ import laesBillede from "../images/laes_brochure.svg";
   .Image {
     display: grid;
     grid-template-columns: 1fr 1fr; /* i stedet for 1fr 1fr */
-    gap: 12px; /* mindre = tættere */
     justify-content: center; /* samler dem i midten */
     align-items: center;
   }
